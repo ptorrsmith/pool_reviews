@@ -1,6 +1,37 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 import PoolsListItem from './PoolsListItem'
+import styled from 'styled-components'
+
+const Home = styled.div`
+	text-align: center;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+`
+
+const Header = styled.div`
+	padding: 100px 100px 10px 0;
+
+	h1 {
+		font-size: 42px;
+	}
+
+`
+
+const Subheader = styled.div`
+	font-weight: 300;
+	font-size: 26px;
+`
+
+const Grid = styled.div`
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 20px;
+	width: 100%;
+	padding: 20px;
+`
+
 
 // stateless component
 // const Pools = () => {
@@ -32,15 +63,15 @@ const Pools = () => {
 
 	return (
 		// <Fragment>  // use a div for now
-		<div className="home">
-			<div className='header'>
+		<Home>
+			<Header>
 				<h1>Pool Reviews</h1>
-				<div className="subheader">Find a good place to swim</div>
-			</div>
-			<div className="grid">
+				<Subheader>Find a good place to swim</Subheader>
+			</Header>
+			<Grid>
 				{grid}
-			</div>
-		</div>
+			</Grid>
+		</Home>
 		// </Fragment>
 
 	)
