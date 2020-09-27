@@ -32,11 +32,11 @@ const LinkWrapper = styled.div`
 	height: 50px;
 
 	a {
-		color: #fff;
-		background: #000;
-		border-radius: 4px;
+		color: darkblue;
+		background: lightblue;
+		border-radius: 8px;
 		padding: 10px 50px;
-		border: 1px solid #000;
+		border: 1px solid blue;
 		width: 100%;
 		text-decoration: none;
 	}
