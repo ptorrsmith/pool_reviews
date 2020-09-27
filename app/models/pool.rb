@@ -8,6 +8,7 @@ class Pool < ApplicationRecord
 	end
 
 	def avg_score
+		return 0 unless reviews.count.positive?  # a 'guard'
 		reviews.average(:score).round(2).to_f
 	end
 end

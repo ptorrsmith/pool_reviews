@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
+import PoolsListItem from './PoolsListItem'
 
 // stateless component
 // const Pools = () => {
@@ -14,12 +15,34 @@ const Pools = () => {
 		// use Axios  yarn add axios
 
 		axios.get('/api/v1/pools.json')
-		.then( resp => console.log(resp) )
+		// .then( resp => console.log(resp) )
+		.then( resp => {
+			setPools(resp.data.data)
+		} )
 		.catch( resp => console.log(resp) )
 	}, [pools.length])
 
+	const grid = pools.map( item => {
 	return (
-		<div>This is the Pools#index view for our app.</div>
+		<PoolsListItem
+			key={item.attributes.name}
+			attributes={item.attributes}
+		/>)
+	})
+
+	return (
+		// <Fragment>  // use a div for now
+		<div className="home">
+			<div className='header'>
+				<h1>Pool Reviews</h1>
+				<div className="subheader">Find a good place to swim</div>
+			</div>
+			<div className="grid">
+				{grid}
+			</div>
+		</div>
+		// </Fragment>
+
 	)
 
 }
