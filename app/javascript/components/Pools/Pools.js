@@ -44,12 +44,12 @@ const Pools = () => {
 		// get all our pools from the api
 		// update pools in our state
 		// use Axios  yarn add axios
-
 		axios.get('/api/v1/pools.json')
 		// .then( resp => console.log(resp) )
-		.then( resp => {
-			setPools(resp.data.data)
-		} )
+		// .then( resp => {
+		// 	setPools(resp.data.data)
+		// } )
+		.then( resp => setPools(resp.data.data) )
 		.catch( resp => console.log(resp) )
 	}, [pools.length])
 
