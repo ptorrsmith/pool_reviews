@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Pool.create([
+pools = Pool.create([
   {
     name: "Freyberg Pool 33m",
     image_url: "https://open-flights.s3.amazonaws.com/United-Airlines.png"
