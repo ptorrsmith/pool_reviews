@@ -6,6 +6,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import App from '../components/App'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 // BOILERPLATE EXAMPLES
 const Hello = props => (
@@ -23,7 +24,10 @@ Hello.propTypes = {
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     // <Hello name="Peter" />,
-    <App />,
+    // <App />,
+    <Router>
+      <Route path='/' component={App} />
+    </Router>,
     document.body.appendChild(document.createElement('div')),
   )
 })
