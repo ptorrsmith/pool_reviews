@@ -5,6 +5,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import App from '../components/App'
 
 // BOILERPLATE EXAMPLES
 const Hello = props => (
@@ -21,7 +22,8 @@ Hello.propTypes = {
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="Peter" />,
+    // <Hello name="Peter" />,
+    <App />,
     document.body.appendChild(document.createElement('div')),
   )
 })
