@@ -78,6 +78,7 @@ const Pool = (props) => {
 			// so will add to pool.reviews
 
 			const included = [...pool.included, resp.data.data]
+			// console.log('included: ', included)
 			setPool({...pool, included})
 			// debugger
 			setReview({title: '', description: '', score: 0})
@@ -98,7 +99,28 @@ const Pool = (props) => {
 
 	}
 
+	// THE following fails because trying to interate over inclued before actually loaded (and has content)
+	// const reviews = pool.included.map( (item, index) => {
+	// 	return (
+	// 		<Review
+	// 			key={index}
+	// 			attributes={item.attributes}
+	// 		/>
+	// 	)
+	// })
 
+	let reviews
+		if (loaded && pool.included) {
+			reviews = pool.included.map( (item, index) => {
+				// console.log('mapping: ', item)
+				return (
+					<Review
+						key={index}
+						attributes={item.attributes}
+					/>
+				)
+			})
+		}
 	// return <div>This is the Pools#show view for our app</div>
 	return (
 		<Wrapper>
@@ -112,7 +134,7 @@ const Pool = (props) => {
 									reviews={pool.included}
 								/>
 							{/* <div className="reviews">[reviews]</div> */}
-							<Review />
+							{reviews}
 						</Main>
 					</Column>
 					<Column>
