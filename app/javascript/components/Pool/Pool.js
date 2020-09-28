@@ -122,6 +122,8 @@ const Pool = (props) => {
 			})
 		}
 	// return <div>This is the Pools#show view for our app</div>
+	// console.log('pool.data:', pool.data ? pool.data.attributes : pool.data)
+
 	return (
 		<Wrapper>
 			{ // the loaded && is to not render until loaded is set to true, after api call and set state
