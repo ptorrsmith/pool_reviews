@@ -6,7 +6,7 @@
 }
 
 .stars {
-  color: #fc01b1;
+  color: #fcd93a;
   position: absolute;
   top: 0;
   left: 0;
@@ -15,10 +15,10 @@
 }
 
 .star-wrapper::before, .stars::before {
-	/* font-family: "FontAwesome"; */
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "FontAwesome";
+	/* font-family: Arial, Helvetica, sans-serif; */
 	font-size: 2rem;
 	/* content: "\f005 \0020 \f005 \0020 \f005 \0020 \f005 \0020 \f005"; */
-	content: " * * * * *"
+	content: "* * * * *"
 	/* content: "\f095" */
 }
