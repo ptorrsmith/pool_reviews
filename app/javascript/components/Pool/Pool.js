@@ -3,6 +3,7 @@ import axios from 'axios'
 import Header from './Header'
 import styled from 'styled-components'
 import ReviewForm from './ReviewForm'
+import Review from './Review'
 
 const Wrapper = styled.div`
 	margin-left: auto;
@@ -110,7 +111,8 @@ const Pool = (props) => {
 									attributes={pool.data.attributes}
 									reviews={pool.included}
 								/>
-							<div className="reviews">[reviews]</div>
+							{/* <div className="reviews">[reviews]</div> */}
+							<Review />
 						</Main>
 					</Column>
 					<Column>
