@@ -109,7 +109,7 @@ const Pool = (props) => {
 	// 	)
 	// })
 
-	let reviews
+	let reviews // so can update once loaded and has included content
 		if (loaded && pool.included) {
 			reviews = pool.included.map( (item, index) => {
 				// console.log('mapping: ', item)
