@@ -1,6 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Link} from 'react-router-dom'
 import styled from 'styled-components'
+import Rating from '../Rating/Rating'
 
 const Card = styled.div`
 	border: 1px solid #efefef;
@@ -50,7 +51,9 @@ const PoolsListItem = (props) => {
 				<img src={props.attributes.image_url} alt={props.attributes.name} />
 			</PoolLogo>
 			<PoolName>{props.attributes.name}</PoolName>
-			<div className="pool-score">{props.attributes.avg_score}</div>
+			<Rating score={props.attributes.avg_score} />
+
+			{/* <div className="pool-score">{props.attributes.avg_score}</div> */}
 			<LinkWrapper>
 				{/* <a href={`/pools/${props.attributes.slug}`}>View {props.attributes.name}</a> */}
 				<Link to={`/pools/${props.attributes.slug}`}>View pool</Link>
