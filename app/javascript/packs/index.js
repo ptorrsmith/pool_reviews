@@ -9,17 +9,17 @@ import App from '../components/App'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 // BOILERPLATE EXAMPLES
-const Hello = props => (
-  <div>Hello {props.name}!</div>
-)
+// const Hello = props => (
+//   <div>Hello {props.name}!</div>
+// )
 
-Hello.defaultProps = {
-  name: 'David'
-}
+// Hello.defaultProps = {
+//   name: 'David'
+// }
 
-Hello.propTypes = {
-  name: PropTypes.string
-}
+// Hello.propTypes = {
+//   name: PropTypes.string
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
