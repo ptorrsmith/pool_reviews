@@ -5,7 +5,8 @@ module Api
 			protect_from_forgery with: :null_session
 
 			def create
-				review = Review.new(review_params)
+				# review = Review.new(review_params) # this won't work as review_params not in right object format, so should add review via the pool to set pool_id
+				review = pool.reviews.new(review_params)
 				if review.save
 					render json: ReviewSerializer.new(review).serialized_json
 				else
@@ -24,6 +25,10 @@ module Api
 			end
 
 			private
+
+			def pool
+				@pool ||= Pool.find(params[:pool_id])
+			end
 
 			def review_params
 				params.require(:review).permit(:title, :description, :score, :pool_id)
