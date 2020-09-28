@@ -77,7 +77,7 @@ const Pool = (props) => {
 			// add new (updated?) review to our reviews array so not need to do another api call
 			// so will add to pool.reviews
 
-			const included = [...pool.included, resp.data]
+			const included = [...pool.included, resp.data.data]
 			setPool({...pool, included})
 			// debugger
 			setReview({title: '', description: '', score: 0})
